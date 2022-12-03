@@ -1,7 +1,6 @@
 package chat
 
 import (
-	"context"
 	"log"
 
 	"golang.org/x/net/context"
@@ -9,7 +8,7 @@ import (
 
 type Server struct{}
 
-func (s *Server) SayHello(ctx context.Context, message *Message) (*Message, err) {
+func (s *Server) SayHello(ctx context.Context, message *Message) (*Message, error) {
 	log.Printf("Received message body from the client %s", message.Body)
 	return &Message{Body: "Hello from the server!"}, nil
 }
